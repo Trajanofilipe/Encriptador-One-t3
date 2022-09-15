@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+
+		<title>Decodificador Alura</title>
+
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+
+	</head>
+
+	<body>
+
+		<header>
+			<h1><a href="https://www.alura.com.br" target="_blank"><img src="vector.png" class="vector" alt="Logo da Alura"></a></h1>
+		</header>
+
+		<main>
+			<section class="input">
+				<textarea rows="25" cols="33" id="mensagem" class="texto" required placeholder=" Digite seu texto"></textarea>
+
+				<img src="exclamacao.png" alt="Exclamação" class="exclamacao">
+				<p class="alerta">Apenas letras minúsculas e sem acento.</p>
+
+
+				<button type="submit" class="criptografar" id="botao" onclick="btnEncriptar()">Criptografar</button>
+
+				<button type="submit" class="descriptografar" id="botao" onclick="btnDesencriptar()">Descriptografar</button>
+			</section>
+
+			<section>
+				<textarea rows="70" cols="40" class="mostrador" id="lupa"></textarea>
+				<button type="submit" class="copiar" onclick="btnCopiar()">Copiar</button>
+			</section>
+
+		</main>
+
+		<footer>
+			<p class="copyright">&copy; Copyright Filipe Trajano - 2022</p>
+		</footer>
+		
+
+	</body>
+
+<script type="text/javascript">
+		
+		const texto = document.querySelector(".texto");
+		const mostrador = document.querySelector(".mostrador");
+		const matrizChaves = [["e","enter"], ["i","imes"], ["a","ai"], ["o","ober"], ["u","ufat"]];
+				
+		function encriptar(stringEncrip) {
+				
+				stringEncrip = stringEncrip.toLowerCase();
+
+				for(let i = 0; i < matrizChaves.length; i++) {
+					if (stringEncrip.includes(matrizChaves[i][0])) {
+						stringEncrip = stringEncrip.replaceAll(matrizChaves[i][0], matrizChaves[i][1])
+					}
+				}
+			return stringEncrip;													
+		}
+
+		function btnEncriptar() {
+			let mensagem = encriptar(texto.value);
+			mostrador.value = mensagem;
+			document.getElementById("lupa").style.background = "none";
+		}
+
+		function desencriptar(stringDesencrip) {
+				
+				stringDesencrip = stringDesencrip.toLowerCase();
+
+				for(let i = 0; i < matrizChaves.length; i++) {
+					if (stringDesencrip.includes(matrizChaves[i][1])) {
+						stringDesencrip = stringDesencrip.replaceAll(matrizChaves[i][1], matrizChaves[i][0])
+					}
+				}
+			return stringDesencrip;													
+		}
+
+		function btnDesencriptar() {
+			let mensagem = desencriptar(texto.value);
+			mostrador.value = mensagem;
+			document.getElementById("lupa").style.background = "none";
+		}
+
+		function btnCopiar() {
+			let mensagem = copiarText(mostrador.value);
+			texto.value = mensagem;
+		}
+
+		function copiarText(stringMostrador) {
+			mostrador.select();
+			navigator.clipboard.writeText(stringMostrador);
+
+			return stringMostrador;
+		}
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+

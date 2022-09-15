@@ -1,0 +1,166 @@
+body {
+	background: #F3F5FC;
+}
+
+.vector {
+	margin: 40px 125px 80px 84px;
+}
+
+main {
+	width: 100%;
+	
+}
+
+.input {
+	margin: 0 0 0 140px;
+}
+
+.texto {
+	display: block;
+	width: 50%;
+	height: 400px;	
+	top: 168px;
+	border-style: hidden;
+	border-radius: 24px;
+	background: #F3F5FC;
+	color: #0A3871;
+	font-size: 32px;
+	clear: left;
+}
+
+.exclamacao {
+	float: left;
+	margin: 16px 16px;	
+}
+
+.alerta {
+	color: #495057;
+	opacity: 0.8;
+	width: 228px;
+	height: 18px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 150%;
+	margin: 16px 16px;
+}
+
+#botao {
+	display: inline;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 24px;
+	margin: 10px 10px;
+	gap: 8px;
+	width: 25%;
+	height: 67px;
+	box-sizing: border-box;
+	border: 1px solid #0A3871;
+	border-radius: 24px;
+	cursor: pointer;
+}
+
+.criptografar {
+	text-align: center;
+	color: #FFFFFF;
+	background: #0A3871;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19.36px;
+}
+
+.descriptografar {
+	text-align: center;
+	color: #0A3871;
+	background: #D8DFE8;
+	border: 1px solid #0A3871;
+	border-radius: 24px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19.36px;
+}
+
+.mostrador {
+	position: absolute;
+	top: 21px;
+	right: 21px;
+	left: auto;
+	bottom: 21px;
+	width: 25%;
+	height: 800px;
+	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+	border-radius: 32px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 36px;
+	color: #495057;
+	background-image: url(lupa.png);
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.copiar {
+	display: block;
+	position: absolute;
+	background: #D8DFE8;
+	padding: 24px;
+	margin: 10px 10px;
+	gap: 8px;
+	width: 20%;
+	height: 67px;
+	right: 42px;
+	box-sizing: border-box;
+	border: 1px solid #0A3871;
+	border-radius: 24px;
+	cursor: pointer;
+	text-align: center;
+	color: #0A3871;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+footer {
+	text-align: center;
+	padding: 40px 0;
+}
+
+.copyright {
+	color: #495057;
+	opacity: 0.8;
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 540px) {
+	body, main, .texto, #botao, .mostrador {
+		width: 100%;
+	}
+	.input {
+		margin: auto;
+	}
+	.mostrador {
+		position: static;
+		height: 15em;
+		background-size: auto;
+	}
+	.copiar {
+		width: 90%;
+		margin: auto;
+		position: static;
+	}
+	
+}
